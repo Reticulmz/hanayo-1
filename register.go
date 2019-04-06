@@ -502,5 +502,5 @@ var forbiddenUsernames = []string{
     "unspoken mattay",
     "parkourwizard",
     "woey",
-    "trafis"
+    "trafis",
 }
