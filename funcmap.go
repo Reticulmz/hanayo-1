@@ -404,11 +404,11 @@ var funcMap = template.FuncMap{
 	},
 	// calculateDonorPrice calculates the price of x donor months in euros.
 	"calculateDonorPrice": func(a float64) string {
-		return fmt.Sprintf("%.2f", math.Pow(a*30*0.2, 0.72))
+		return fmt.Sprintf("%.2f", math.Pow(a * 30 * 0.2, 0.72))
 	},
 	// calculatePremiumPrice calculates the price of x premium months in euros.
 	"calculatePremiumPrice": func(a float64) string {
-		return fmt.Sprintf("%.2f", math.Pow(a*68*0.15, 0.93))
+		return fmt.Sprintf("%.2f", math.Pow(a * 68 * 0.15, 0.93))
 	},
 	// is2faEnabled checks 2fa is enabled for an user
 	"is2faEnabled": is2faEnabled,
@@ -430,7 +430,7 @@ var funcMap = template.FuncMap{
 	},
 	// perc returns a percentage
 	"perc": func(i, total float64) string {
-		return fmt.Sprintf("%.0f", i/total*100)
+		return fmt.Sprintf("%.0f", i / total * 100)
 	},
 	// atLeastOne returns 1 if i < 1, or i otherwise.
 	"atLeastOne": func(i int) int {
@@ -483,7 +483,7 @@ var funcMap = template.FuncMap{
 		return langInfo{}
 	},
 	"countryList": func(n int64) []string {
-		return rd.ZRevRange("hanayo:country_list", 0, n-1).Val()
+		return rd.ZRevRange("hanayo:country_list", 0, n - 1).Val()
 	},
 	"documentationFiles": doc.GetDocs,
 	"documentationData": func(slug string, language string) doc.File {
@@ -498,7 +498,7 @@ var funcMap = template.FuncMap{
 	"shouldShowJP": func(c *gin.Context, cont context) bool {
 		for _, x := range getLang(c) {
 			if x == "ja" {
-				return cont.User.ID%5 == 4
+				return cont.User.ID % 5 == 4
 			}
 		}
 		return false
