@@ -500,6 +500,7 @@ var forbiddenUsernames = []string{
     "ggm9",
     "kaguya",
     "unspoken mattay",
+    "mattay",
     "parkourwizard",
     "woey",
     "trafis",
