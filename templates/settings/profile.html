@@ -24,12 +24,10 @@ MinPrivileges=2
 						</label>
 						<input type="email" value="{{ $d.email }}" placeholder="{{ .T "Email address" }}" required disabled>
 					</div>
-					<!--{{ if has .Context.User.Privileges 8388612 }}
 					<div class="field">
 						<label>{{ .T "Alternative username (cannot be used for login)" }}</label>
 						<input type="text" name="username_aka" value="{{ $d.username_aka }}" placeholder="{{ .T "Also known as..." }}">
 					</div>
-					{{ end }}-->
 					<div class="field">
 						<label>{{ .T "Favourite mode" }}</label>
 						<select class="ui dropdown" name="favourite_mode" data-cast="int">
