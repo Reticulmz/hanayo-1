@@ -24,12 +24,12 @@ MinPrivileges=2
 						</label>
 						<input type="email" value="{{ $d.email }}" placeholder="{{ .T "Email address" }}" required disabled>
 					</div>
-					{{ if has .Context.User.Privileges 8388612 }}
+					<!--{{ if has .Context.User.Privileges 8388612 }}
 					<div class="field">
 						<label>{{ .T "Alternative username (cannot be used for login)" }}</label>
 						<input type="text" name="username_aka" value="{{ $d.username_aka }}" placeholder="{{ .T "Also known as..." }}">
 					</div>
-					{{ end }}
+					{{ end }}-->
 					<div class="field">
 						<label>{{ .T "Favourite mode" }}</label>
 						<select class="ui dropdown" name="favourite_mode" data-cast="int">
@@ -74,7 +74,7 @@ MinPrivileges=2
 							</div>
 						{{ end }}
 					</div>
-					<h3 class="ui header">{{ .T "Preferences" }}</h3><br>
+					<!--h3 class="ui header">{{ .T "Preferences" }}</h3><br>
 					<div class="ui three column grid" id="checkbox-grid">
 					<div class="ui checkbox">
 						{{ $checked := band (int $d.prefer_relax) }}
@@ -82,7 +82,7 @@ MinPrivileges=2
 							<label>b</label>
 						</div>
 
-					</div>
+					</div-->
 <br>
 					<div class="ui divider"></div>
 					<div style="text-align: right">

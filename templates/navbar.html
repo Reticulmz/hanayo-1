@@ -18,9 +18,7 @@
 				the current RAP's sidebar.
 			*/}}
 		{{ else }}
-
 			{{ navbarItem .Path (.T "Leaderboard") "/leaderboard" }}
-
 		<div class="ui dropdown item">
 			<span>{{ .T "Clans" }}</span>
 				<div class="menu">
@@ -33,19 +31,19 @@
 				<div class="menu">
 					{{ navbarItem .Path (.T "Discord") "https://discord.gg/5cBtMPW" }}
 					{{ navbarItem .Path (.T "YouTube Channel") "https://www.youtube.com/channel/UCjf8Fx_BlUr-htEy6hficcQ" }}
-					{{ navbarItem .Path (.T "Contact support") "/help" }}
-					{{ navbarItem .Path (.T "Old vanilla account merge") "/merge" }}
+					<!--{{ navbarItem .Path (.T "Contact support") "/help" }}
+					{{ navbarItem .Path (.T "Old vanilla account merge") "/merge" }}-->
 				</div>
 			</div>
 			<div class="ui dropdown item">
-				<span>{{ .T "<i class=\"red heart icon\"></i>Donate" | html }}</span>
+				<span>{{ .T "<i class=\"red heart icon\"></i>Support Akatsuki" | html }}</span>
 				<div class="menu">
-					{{ navbarItem .Path (.T "Supporter" | printf "<i class=\"pink heart icon\"></i>%s") "/donate" }}
+					{{ navbarItem .Path (.T "Supporter" | printf "<i class=\"pink heart icon\"></i>%s") "/support" }}
 					{{ navbarItem .Path (.T "Premium" | printf "<i class=\"yellow heart icon\"></i>%s") "/premium" }}
 				</div>
 			</div>
-			{{ navbarItem .Path (.T "Download Switcher" | printf "<i class=\"blue cloud download icon\"></i>%s") "/static/switcher.exe" }}
-			{{ if $isAdmin }}{{ navbarItem .Path (.T "Admin Panel" | printf "<b>%s</b>") "http://old.akatsuki.pw/index.php?p=100" }}{{ end }}
+			{{ navbarItem .Path (.T "Server Switcher" | printf "<i class=\"blue cloud download icon\"></i>%s") "/static/switcher.exe" }}
+			{{ if $isAdmin }}{{ navbarItem .Path (.T "Admin" | printf "<b>%s</b>") "http://old.akatsuki.pw/index.php?p=100" }}{{ end }}
 		{{ end }}
 		<div class="firetrucking-right-menu">
 			<div class="item">
@@ -73,11 +71,6 @@
 				{{ navbarItem .Path (.T "Register") "/register" }}
 			{{ end }}
 		</div>
-
-
-			
 	</div>
 </div>
-
-
 {{ end }}
