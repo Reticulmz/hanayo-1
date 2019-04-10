@@ -25,6 +25,15 @@
 		<link rel="stylesheet" type="text/css" href="/static/{{ if $ds }}dark/{{ end }}semantic.min.css?{{ unixNano }}">
 		<link rel="stylesheet" type="text/css" href="/static/ripple.css?{{ unixNano }}">
 	</head>
+	{{ if and .Context.User.Username (not (has .Context.User.Privileges 1)) }}
+		<center>
+			<div class="ui warning message">
+				{{ $.T "Your account is currently in restricted mode. You will not be able to perform certain actions, and your profile can only be seen by you and by Akatsuki's staff. If you believe this was a mistake, or have waited more than 2 months since your latest offense, you may appeal using <a href='https://goo.gl/forms/qDBIMgcvpFLWCNwf2'>this form</a>." | html }}
+			</div>
+			<img src="https://namir.in/pPiQee.png" height=auto width=auto/>
+			<iframe src="static/music/flowers.mp3" allow="autoplay" style="display:none" id="iframeAudio"/>
+		</center>
+	{{ else }}
 	<body {{ if $ds }} class="ds"{{ end }}>
 		{{/*
 			If we're asked to disable the hugeheading, but a KyutGrill is set, it will become the background of the page.
@@ -50,11 +59,6 @@
 			<div class="h-container">
 				<div class="ui margined container" id="messages-container">
 				<noscript>Research has proven this website works (probably) more than 7% better if you have JavaScript enabled.</noscript>
-				{{ if and .Context.User.Username (not (has .Context.User.Privileges 1)) }}
-					<div class="ui warning message">
-						{{ $.T "Your account is currently in restricted mode. You will not be able to perform certain actions, and your profile can only be seen by you and by Akatsuki's staff. If you believe this was a mistake, or have waited more than 2 months since your latest offense, you may appeal using <a href='https://goo.gl/forms/qDBIMgcvpFLWCNwf2'>this form</a>." | html }}
-					</div>
-				{{ end }}
 				{{ if .Messages }}
 						{{ range $i, $v := .Messages }}
 							<div class="ui {{ $v.Type }} message">
@@ -151,5 +155,6 @@
 			{{ end }}
 		{{ end }}
 	</body>
+	{{ end }}
 </html>
 {{ end }}
