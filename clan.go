@@ -56,8 +56,6 @@ func leaveClan(c *gin.Context) {
 		getSession(c).Save()
 		c.Redirect(302, "/clans?mode=0")
 	}
-	
-
 }
 
 
@@ -214,7 +212,7 @@ func clanInvite(c *gin.Context) {
 			return
 		}
 		
-		// check if clan even exists?
+			// check if clan even exists?
 			if db.QueryRow("SELECT 1 FROM clans WHERE id = ?", res).
 			Scan(new(int)) == sql.ErrNoRows {
 
